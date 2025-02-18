@@ -6,32 +6,12 @@ inputs:
   command:
     description: 'Command to run'
     required: true
-  artifactory-release-username-variable:
-    description: 'artifactory realese username variable name'
-    required: true
-  artifactory-release-username-value:
-    description: 'artifactory realese username variable value'
-    required: true
-  artifactory-snapshots-password-variable:
-    description: 'artifactory realese password variable name'
-    required: true
-    artifactory-snapshots-password-value:
-      description: 'artifactory realese password value'
-      required: true
-  path-to-settings:
-    description: 'path to maven settings file'
-    required: false
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.command }}
-    - ${{ inputs.artifactory-release-username-variable }}
-    - ${{ inputs.artifactory-release-username-value }}
-    - ${{ inputs.artifactory-snapshots-password-variable }}
-    - ${{ inputs.artifactory-snapshots-password-value }}
-    - ${{ inputs.path-to-settings }}
 
 branding:
   icon: 'package'
